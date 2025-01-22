@@ -13,7 +13,7 @@ const App = () => {
     val === "" 
       ? (setText(""), alert("Please enter your name")
       )
-      : setText(val)
+      : setText(`Hello ${val}!`)
 
 
   }
