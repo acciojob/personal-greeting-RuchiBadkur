@@ -6,8 +6,8 @@ import {useState} from "react";
 const App = () => {
    const [text, setText ] = useState("");
     const getVal = (e) => {
-       const val = e.target.value;
-       setText(val);
+       const {value} = e.target;
+       setText(value);
     }
    const clear = () => {
       setText("");
@@ -15,9 +15,9 @@ const App = () => {
   return (
     <div>
         {/* Do not remove the main div */}
-      <h2>Enter your name:</h2>
+      <p>Enter your name:</p>
       <input type="text" id="text" onInput={getVal} value={text}/>
-      {!!text.length && <p>`Hello ${text}!`</p>}
+      {!!text.length && <p>Hello {text}!</p>}
       <button onClick={clear}>clear</button>
     </div>
   )
